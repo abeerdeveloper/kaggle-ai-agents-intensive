@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeBoard - Agentic Task Orchestrator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="background-glows">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <header class="app-header">
+        <div class="logo-area">
+            <div class="logo-icon"></div>
+            <h1>VibeBoard</h1>
+            <span class="badge">Agentic Orchestrator v1.0</span>
+        </div>
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="dashboard-layout">
+        <!-- Sidebar / Resource Hub -->
+        <aside class="sidebar card">
+            <h2>📚 Whitepaper Resources</h2>
+            <p class="section-desc">Study notes from the Intensive Whitepapers.</p>
+            
+            <div class="accordion">
+                <div class="accordion-item active">
+                    <button class="accordion-header" id="acc-sdlc">
+                        <span>The New SDLC Loop</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Traditional sequential cycles (Plan ➔ Dev ➔ Test ➔ Deploy) are compressed by AI agents into a single interactive loop: <strong>Intent ➔ Design ➔ Autopilot Execution ➔ Staging Review</strong>.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" id="acc-factory">
+                        <span>The Factory Model</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Developers act as orchestrators. They construct:
+                        <ul>
+                            <li><strong>Context:</strong> Files/skills given to the agent.</li>
+                            <li><strong>Constraints:</strong> Permissions/rules.</li>
+                            <li><strong>Evaluation:</strong> Automated tests.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" id="acc-vibecoding">
+                        <span>What is Vibe Coding?</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>A style of programming where the human provides high-level intent, design inspiration, and constraints, while the agent writes code, handles syntax, and resolves bugs.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <section class="main-content">
+            <!-- Metrics Cards -->
+            <div class="metrics-grid">
+                <div class="metric-card card">
+                    <div class="metric-info">
+                        <h3>Unit 1 Progress</h3>
+                        <p class="metric-value" id="progress-text">0%</p>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="metric-card card">
+                    <div class="metric-info">
+                        <h3>Simulated Agent Health</h3>
+                        <p class="metric-value color-neon">Active</p>
+                    </div>
+                    <div class="status-indicator-container">
+                        <span class="pulse-indicator"></span>
+                        <span class="status-lbl">Harness Secured</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Double Column: Checklist and Agent Simulator -->
+            <div class="dashboard-grid">
+                <!-- Checklist -->
+                <div class="checklist-section card">
+                    <h2>🎒 Course Assignment Checklist</h2>
+                    <p class="section-desc">Track your daily requirements for Unit 1.</p>
+                    <div class="checklist-items">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="task-1" class="task-checkbox">
+                            <span class="checkmark"></span>
+                            <div class="task-text">
+                                <span class="task-title">Listen to Summary Podcast</span>
+                                <span class="task-sub">Explore the audio summary of Unit 1.</span>
+                            </div>
+                        </label>
+                        
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="task-2" class="task-checkbox">
+                            <span class="checkmark"></span>
+                            <div class="task-text">
+                                <span class="task-title">Read "The New SDLC" Whitepaper</span>
+                                <span class="task-sub">Study the intent-driven development framework.</span>
+                            </div>
+                        </label>
+                        
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="task-3" class="task-checkbox">
+                            <span class="checkmark"></span>
+                            <div class="task-text">
+                                <span class="task-title">Complete Antigravity 2.0 Codelab</span>
+                                <span class="task-sub">Practice workspace setups and custom skills.</span>
+                            </div>
+                        </label>
+                        
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="task-4" class="task-checkbox">
+                            <span class="checkmark"></span>
+                            <div class="task-text">
+                                <span class="task-title">Complete Cloud Run Codelab</span>
+                                <span class="task-sub">Publish a web application from AI Studio.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Agent Simulator -->
+                <div class="simulator-section card">
+                    <div class="card-header">
+                        <h2>🤖 Vibe Code Agent Simulator</h2>
+                        <button id="run-agent-btn" class="btn-primary">Launch Agent Run</button>
+                    </div>
+                    <p class="section-desc">Run a mock agent execution to see self-healing code compilation in action.</p>
+                    
+                    <div class="console-wrapper">
+                        <div class="console-header">
+                            <span class="console-dot dot-red"></span>
+                            <span class="console-dot dot-yellow"></span>
+                            <span class="console-dot dot-green"></span>
+                            <span class="console-title">agent-orchestrator.log</span>
+                        </div>
+                        <div class="console-body" id="console-logs">
+                            <div class="log-line system">System ready. Click "Launch Agent Run" to start execution loop...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>&copy; 2026 Abeer Shafiq &bull; Built with Google Antigravity & Vibe Coding</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
