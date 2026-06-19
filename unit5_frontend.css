@@ -214,3 +214,22 @@ button:disabled {
     color: var(--danger-color);
     border: 1px solid rgba(239, 68, 68, 0.3);
 }
+
+footer {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.credit {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    letter-spacing: 0.03em;
+}
+
+.credit span {
+    font-weight: 600;
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
