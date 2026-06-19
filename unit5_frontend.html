@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Expense Portal</title>
+    <link rel="stylesheet" href="unit5_frontend.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <div class="glass-container">
+        <header>
+            <h1>AI Expense Portal</h1>
+            <p>Submit your expenses for instant AI-driven triage.</p>
+        </header>
+
+        <main>
+            <form id="expense-form">
+                <div class="input-group">
+                    <label for="item">Expense Description</label>
+                    <input type="text" id="item" placeholder="e.g. Office Supplies" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="amount">Amount ($)</label>
+                    <input type="number" id="amount" placeholder="45.00" step="0.01" required>
+                </div>
+
+                <button type="submit" id="submit-btn">
+                    <span>Submit to AI Agent</span>
+                    <div class="loader" id="btn-loader"></div>
+                </button>
+            </form>
+
+            <div id="result-box" class="hidden">
+                <h3>Agent Decision</h3>
+                <div class="status-badge" id="decision-status">Pending...</div>
+                <p id="decision-message"></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="unit5_frontend.js"></script>
+</body>
+</html>
